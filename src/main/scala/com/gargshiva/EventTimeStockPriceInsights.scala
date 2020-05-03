@@ -2,7 +2,7 @@ package com.gargshiva
 
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.streaming.OutputMode
-import org.apache.spark.sql.{Dataset, SparkSession}
+import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 
 /**
   * Calculate the average of a listed stock .
@@ -37,6 +37,9 @@ object EventTimeStockPriceInsights {
       .getOrCreate()
 
     spark.sparkContext.setLogLevel("ERROR")
+
+    // DataSource API to read the data from various structured resources ; Data is represented with DataFrame API.
+   val op: DataFrame =  spark.read.format("").load("")
 
     import spark.implicits._
     val socketDataSet = spark

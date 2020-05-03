@@ -1,7 +1,7 @@
 package com.learn.structured.stream
 
+import org.apache.spark.sql.Row
 import org.apache.spark.sql.streaming.{DataStreamReader, DataStreamWriter, OutputMode, StreamingQuery}
-import org.apache.spark.sql.{Row, SparkSession}
 
 /**
   * DataSourceAPI (1.3) has been extended to support stream with new method readStream() and writestream()
@@ -28,13 +28,13 @@ import org.apache.spark.sql.{Row, SparkSession}
   *
   */
 
-object SourceAndSinkRoller {
+/**
+  * Structured Streaming : Batch is the special case of Streaming to only run streaming query once;
+  * Spark Streaming : DStreams is all about faster processing of batches
+  */
+
+object SourceAndSinkRoller extends InternalSparkSession {
   def main(args: Array[String]): Unit = {
-
-    val spark = SparkSession.builder()
-      .master("local[*]")
-      .getOrCreate()
-
 
     // DataSource
     val dataStreamReader: DataStreamReader = spark
