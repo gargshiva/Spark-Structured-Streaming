@@ -1,5 +1,6 @@
-package com.learn.structured.stream
+package com.learn.structured.stream.aggregation
 
+import com.learn.structured.stream.common.InternalSparkSession
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.streaming.{DataStreamReader, DataStreamWriter, OutputMode, StreamingQuery}
 

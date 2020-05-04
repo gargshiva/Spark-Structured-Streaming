@@ -1,4 +1,4 @@
-package com.learn.structured.stream
+package com.learn.structured.stream.aggregation
 
 import org.apache.spark.sql.streaming.{DataStreamReader, OutputMode}
 import org.apache.spark.sql.{DataFrame, SparkSession}

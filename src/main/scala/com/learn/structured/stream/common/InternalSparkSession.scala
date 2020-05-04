@@ -1,4 +1,4 @@
-package com.learn.structured.stream
+package com.learn.structured.stream.common
 
 import org.apache.spark.sql.SparkSession
 
@@ -7,6 +7,5 @@ trait InternalSparkSession {
     SparkSession.builder()
       .master("local[*]")
       .getOrCreate()
-
   }
 }
