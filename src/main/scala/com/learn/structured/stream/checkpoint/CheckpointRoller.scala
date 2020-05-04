@@ -5,6 +5,26 @@ import org.apache.spark.sql.streaming.{DataStreamReader, DataStreamWriter, Outpu
 import org.apache.spark.sql.types.{DoubleType, StringType, StructField, StructType}
 import org.apache.spark.sql.{Dataset, Row}
 
+/**
+  * By default, Spark streaming maintains the state from very beginning;
+  * In case of failures/restarts; Spark need to recover the state to avoid re-run.
+  * Checkpoint is the mechanism to preserve the state of the applications in local folder/HDFS.
+  */
+
+/**
+  * To enable checkpiunt , source of data must support it ;
+  * Checkpoint may need to replay some of the data to fully recover the state ; Like re-playing the messages in kafka from particular offset;
+  * SocketStream doesn't support checkpoints;
+  * Kafka and FileStream support checkpointing;
+  */
+
+/**
+  * Recovery :
+  *
+  * Whenever Spark streaming query restarts; spark goes through the content of the directory before it accepts any new data.
+  * This makes sure that spark recovers the old state before it starts processing new data.
+  * So whenever there is restart, spark first recovers the old state and then start processing new data from the stream.
+  */
 object CheckpointRoller extends InternalSparkSession {
 
   def main(args: Array[String]): Unit = {
