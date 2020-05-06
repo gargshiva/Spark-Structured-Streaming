@@ -48,6 +48,7 @@ object ProcessingWindow extends InternalSparkSession {
         .toDF("word", "processingTime")
 
     /**
+      * 15 seconds of window on Processing time;
       * Collect events of last 15 seconds of processing time
       * Apply aggregation on them
       */
