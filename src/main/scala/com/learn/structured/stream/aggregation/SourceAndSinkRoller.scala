@@ -42,7 +42,7 @@ object SourceAndSinkRoller extends InternalSparkSession {
       .readStream
       .format("socket")
       .option("host", "localhost")
-      .option("port", 50050)
+      .option("port", 5005)
 
     val streamDF = dataStreamReader.load()
 

@@ -71,7 +71,7 @@ object CheckpointRoller extends InternalSparkSession {
     val sink: DataStreamWriter[Row] = countDs
       .writeStream
       .format("console")
-      .option("checkpointLocation", "src/main/resources/checkpoint")
+      .option("checkpointLocation", "/tmp/checkpoint")
       .outputMode(OutputMode.Complete())
       .queryName("CheckpointQuery")
 

@@ -46,7 +46,7 @@ object EventWindow extends InternalSparkSession {
       spark
         .readStream
         .format("socket")
-        .option("host", "localhost")
+        .option("host", "127.0.0.1")
         .option("port", "50050")
         .load()
         .as[String]
