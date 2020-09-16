@@ -1,0 +1,5 @@
+package problems
+
+object RunningAverage {
+
+}
